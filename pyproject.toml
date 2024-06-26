@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "newsletter_crew"
+version = "0.1.0"
+description = "newsletter-crew using crewAI"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+crewai = { extras = ["tools"], version = "^0.32.2" }
+
+[tool.poetry.scripts]
+newsletter_crew = "newsletter_crew.main:run"
+train = "newsletter_crew.main:train"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
