@@ -12,7 +12,8 @@ class SearchAndContents(BaseTool):
 
     def _run(self, search_query: str) -> str:
 
-        exa = Exa(api_key=os.getenv("EXA_API_KEY"))
+        # exa = Exa(api_key=os.getenv("EXA_API_KEY"))
+        exa = Exa(api_key="913abd36-5853-4c55-8bab-e9dcbfe13eb9")
 
         one_week_ago = datetime.now() - timedelta(days=7)
         date_cutoff = one_week_ago.strftime("%Y-%m-%d")
@@ -38,7 +39,8 @@ class FindSimilar(BaseTool):
         one_week_ago = datetime.now() - timedelta(days=7)
         date_cutoff = one_week_ago.strftime("%Y-%m-%d")
 
-        exa = Exa(api_key=os.getenv("EXA_API_KEY"))
+        # exa = Exa(api_key=os.getenv("EXA_API_KEY"))
+        exa = Exa(api_key="913abd36-5853-4c55-8bab-e9dcbfe13eb9")
 
         search_results = exa.find_similar(
             url=article_url, start_published_date=date_cutoff
@@ -53,7 +55,8 @@ class GetContents(BaseTool):
     
     def _run(self, article_ids: str) -> str:
 
-        exa = Exa(api_key=os.getenv("EXA_API_KEY"))
+        # exa = Exa(api_key=os.getenv("EXA_API_KEY"))
+        exa = Exa(api_key="913abd36-5853-4c55-8bab-e9dcbfe13eb9")
 
         contents = exa.get_contents(article_ids)
         return contents
